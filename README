@@ -1,0 +1,23 @@
+Caba Alexandru 322CB Tema1 PP
+
+Tipul implementarii - greedy
+
+variables - memoreaza toate variabilele initializate si valoarea acestora
+checkSyntax - devine false daca o varabila nu e gasita in hashmap
+checkAssert - devine false daca o asertiune a fost falsa
+checkReturn - devine true daca a intalnit un return
+
+  Functia evalAssignment primeste un program de tip assignment. Dupa ce se face split pe string verific daca accestea sunt in numar de 3 altfel trebuie evaluata expresia din partea dreapta (ex: [= x [+ x 1]]). Dupa ce verific daca acestea sunt valori sau variabile aplic operatia "+" sau "*" si elimin ultimele string-uri din parts si repet cat timp este nevoie. La final variabila este adaugata in hashmap.
+
+  Functia evalCondition primeste o expresie de tip "<" sau "==" si returneaza true sau false dupa ce o evalueaza. De asemenea daca este nevoie expresia din partea dreapta este evaluata (ex: [< x [+ 1 1]]).
+  
+  Functia evalIf primeste program "if" pe care il imparte in conditie, program pentru then si program pentru else. In functie de conditie(false sau true) este executat subprogramul specific.
+  
+  Functia evalFor primeste un program "for" pe care il imparte in assignment1, conditie, assignment2(pas-for) si programul din cadrul for.
+Se executa assign1 si cat timp conditia este adevarata se executa programul si assign2 (pasul pentru for).
+
+  Functia evalAssert primeste un program "assert" si dupa ce evalueaza conditia returneaza true/false.
+  
+  Functia evalReturn primeste un program "return". Acesta imparte string-ul primit si daca este nevoie evalueaza expresia data pentru return (ex: [return [+ x y]]). La final seteaza valoarea din returnValue si modifica checkReturn in true.
+  
+  Functia splitProgram ia un program de tip ; si il imparte in subprograme de tip if, for, assert, return, assign.
